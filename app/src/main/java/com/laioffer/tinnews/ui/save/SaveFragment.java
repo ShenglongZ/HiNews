@@ -54,7 +54,7 @@ public class SaveFragment extends Fragment {
 
             @Override
             public void onRemoveFavorite(Article article) {
-                viewModel.deteleSavedArticles(article);
+                viewModel.deleteSavedArticles(article);
             }
         });
 

@@ -18,9 +18,8 @@ public class SaveViewModel extends ViewModel {
     public LiveData<List<Article>> getAllSavedArticles(){
         return repository.getAllSavedArticles();
     }
-    public void deteleSavedArticles(Article article){
+    public void deleteSavedArticles(Article article) {
         repository.deleteSavedArticles(article);
     }
-
 
 }

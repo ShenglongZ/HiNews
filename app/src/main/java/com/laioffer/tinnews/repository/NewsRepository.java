@@ -107,7 +107,8 @@ public class NewsRepository {
 
     }
     public void deleteSavedArticles(Article article){
-        AsyncTask.execute(() -> database.articleDao().deleteArticle());
+        AsyncTask.execute(() -> database.articleDao().deleteArticle(article));
+
     }
 
 
