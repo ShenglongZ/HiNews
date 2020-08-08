@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment implements CardStackListener {
                             if (newsResponse != null) {
                                  Log.d("HomeFragment", newsResponse.toString());
                                 articles = newsResponse.articles;
-                                swipeAdapter.setArticles(newsResponse.articles);
+                                swipeAdapter.setArticles(articles);
 
                             }
                         });
@@ -94,6 +94,9 @@ public class HomeFragment extends Fragment implements CardStackListener {
             Log.d("CardStackView", "Unliked " + layoutManager.getTopPosition());
         } else if (direction == Direction.Right) {
             Log.d("CardStackView", "Liked "  + layoutManager.getTopPosition());
+            Article article = articles.get(layoutManager.getTopPosition() -1);
+            viewModel.setFavoriteArticleInput(article);
+
         }
     }
 
@@ -120,7 +123,6 @@ public class HomeFragment extends Fragment implements CardStackListener {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
                binding = FragmentHomeBinding.inflate(inflater, container, false);
                return binding.getRoot();
     }

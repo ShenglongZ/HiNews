@@ -50,10 +50,6 @@ public class CardSwipeAdapter extends RecyclerView.Adapter<CardSwipeAdapter.Card
     public int getItemCount() {
         return articles.size();
     }
-
-
-
-
     // 3. CardSwipeViewHolder:
     // TODO
     public static class CardSwipeViewHolder extends RecyclerView.ViewHolder {
